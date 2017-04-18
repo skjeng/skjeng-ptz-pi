@@ -2,7 +2,6 @@
 import time
 import sys
 import keyboard
-from enum import Enum
 
 servo_x_position = 50
 position_x_changed = False
@@ -10,6 +9,23 @@ servo_y_position = 50
 position_y_changed = False
 
 speed = 3
+
+def servo_up():
+    sb = open('/dev/servoblaster', 'w')
+    print("P1-12=+"+str(1), file=sb)
+
+def servo_down():
+    sb = open('/dev/servoblaster', 'w')
+    print("P1-12=-"+str(1), file=sb)
+
+def servo_left():
+    sb = open('/dev/servoblaster', 'w')
+    print("P1-18=+"+str(1), file=sb)
+
+def servo_right():
+    sb = open('/dev/servoblaster', 'w')
+    print("P1-18=-"+str(1), file=sb)
+
 
 def move_servo_up():
     global speed

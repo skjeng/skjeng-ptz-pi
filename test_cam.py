@@ -4,5 +4,5 @@ from time import sleep
 camera = PiCamera()
 
 camera.start_preview()
-sleep(1000)
+sleep(10)
 camera.stop_preview()
